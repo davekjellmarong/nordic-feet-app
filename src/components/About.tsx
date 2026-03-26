@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section
@@ -5,26 +7,45 @@ export default function About() {
       className="bg-[#f4f6fa] py-20 px-4"
       aria-labelledby="om-oss-heading"
     >
-      <div className="mx-auto max-w-3xl text-center">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4EA8DE]">
-          Om oss
-        </p>
-        <h2
-          id="om-oss-heading"
-          className="mb-8 text-3xl font-extrabold tracking-tight text-[#1B3A6B] sm:text-4xl"
-        >
-          Om Nordic Feet
-        </h2>
-        <p className="text-base leading-relaxed text-[#1B3A6B]/80 sm:text-lg">
-          Nordic Feet drives av en nyutdannet, autorisert fotterapeut med en
-          sterk lidenskap for å tilby fotterapi til mennesker i alle
-          livssituasjoner. Jeg brenner for god fothelse og ønsker å gi mine
-          pasienter trygge, profesjonelle og behagelige behandlinger. Hos meg
-          tilbys et utvalg fotbehandlinger som tilpasses dine behov, med mål om
-          å gi føttene best mulig pleie. I tillegg legger jeg stor vekt på
-          veiledning og gode råd, slik at du kan ivareta fothelsen din også
-          etter behandlingen.
-        </p>
+      <div className="mx-auto max-w-5xl">
+        <div className="flex flex-col items-center gap-12 md:flex-row md:items-center">
+          {/* Photo */}
+          <div className="flex-shrink-0">
+            <Image
+              src="/fotterapaut.JPEG"
+              alt="Autorisert fotterapeut – Nordic Feet Fotklinikk"
+              width={591}
+              height={549}
+              sizes="(max-width: 768px) 90vw, 380px"
+              priority
+              style={{ width: "380px", height: "auto", maxWidth: "100%" }}
+              className="rounded-3xl shadow-xl"
+            />
+          </div>
+
+          {/* Text */}
+          <div className="flex-1">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4EA8DE]">
+              Om oss
+            </p>
+            <h2
+              id="om-oss-heading"
+              className="mb-6 text-3xl font-extrabold tracking-tight text-[#1B3A6B] sm:text-4xl"
+            >
+              Om Nordic Feet
+            </h2>
+            <p className="text-base leading-relaxed text-[#1B3A6B]/80 sm:text-lg">
+              Nordic Feet drives av en nyutdannet, autorisert fotterapeut med en
+              sterk lidenskap for å tilby fotterapi til mennesker i alle
+              livssituasjoner. Jeg brenner for god fothelse og ønsker å gi mine
+              pasienter trygge, profesjonelle og behagelige behandlinger. Hos meg
+              tilbys et utvalg fotbehandlinger som tilpasses dine behov, med mål
+              om å gi føttene best mulig pleie. I tillegg legger jeg stor vekt på
+              veiledning og gode råd, slik at du kan ivareta fothelsen din også
+              etter behandlingen.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
